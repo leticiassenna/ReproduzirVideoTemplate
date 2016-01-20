@@ -5,10 +5,35 @@
  */
 package br.ifes.leticia.reproduzirvideotemplate.model;
 
+import br.ifes.leticia.reproduzirvideotemplate.control.Formato;
+
 /**
  *
  * @author Leticia
  */
-public class FormatoMP3 {
+public class FormatoMP3 extends Formato{
     
+    public FormatoMP3(String codec){
+        super(codec);
+    }
+    
+    @Override
+    public void carregarArquivo(){
+        System.out.println("Carregando arquivo Avi");
+    }
+    
+    @Override
+    public void carregarLegendas(){
+        System.out.println("Carregando legenda Avi");
+    }
+    
+    @Override
+    public void reproduzirVideo(){
+        System.out.println("Reproduzindo Video Avi. Codec: "+ getCodec());
+    }
+    
+    @Override
+    public void finalizarReproducao(){
+        System.out.println("Finalizando Avi");
+    }
 }
