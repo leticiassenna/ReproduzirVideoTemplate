@@ -18,6 +18,14 @@ public class Video {
     double minutos;
     Formato formato;
 
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public double getMinutos() {
+        return minutos;
+    }
+
     public Formato getFormato() {
         return formato;
     }
