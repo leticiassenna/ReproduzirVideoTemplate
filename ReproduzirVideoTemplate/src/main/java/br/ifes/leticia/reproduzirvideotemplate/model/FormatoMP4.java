@@ -19,22 +19,22 @@ public class FormatoMP4 extends Formato{
     
     @Override
     public void carregarArquivo(){
-        System.out.println("Carregando arquivo Avi");
+        System.out.println("Carregando arquivo MP4");
     }
     
     @Override
     public void carregarLegendas(){
-        System.out.println("Carregando legenda Avi");
+        System.out.println("Carregando legenda MP4");
     }
     
     @Override
     public void reproduzirVideo(){
-        System.out.println("Reproduzindo Video Avi. Codec: "+ getCodec());
+        System.out.println("Reproduzindo Video. Codec: "+ getCodec());
     }
     
     @Override
     public void finalizarReproducao(){
-        System.out.println("Finalizando Avi");
+        System.out.println("Finalizando MP4\n");
     }
     
 }

@@ -29,11 +29,11 @@ public class FormatoAVI extends Formato{
     
     @Override
     public void reproduzirVideo(){
-        System.out.println("Reproduzindo Video Avi. Codec: "+ getCodec());
+        System.out.println("Reproduzindo Video. Codec: "+ getCodec());
     }
     
     @Override
     public void finalizarReproducao(){
-        System.out.println("Finalizando Avi");
+        System.out.println("Finalizando Avi\n");
     }
 }

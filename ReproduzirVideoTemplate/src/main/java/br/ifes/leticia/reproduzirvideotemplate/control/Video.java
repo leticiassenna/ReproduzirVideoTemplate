@@ -5,26 +5,48 @@
  */
 package br.ifes.leticia.reproduzirvideotemplate.control;
 
+import br.ifes.leticia.reproduzirvideotemplate.model.FormatoAVI;
+import br.ifes.leticia.reproduzirvideotemplate.model.FormatoMP3;
+import br.ifes.leticia.reproduzirvideotemplate.model.FormatoMP4;
+
 /**
  *
  * @author Leticia
  */
 public class Video {
     String titulo;
-    int minutos;
-    String qualidade;
-    Formato codec;
+    double minutos;
+    Formato formato;
+
+    public Formato getFormato() {
+        return formato;
+    }
     
-    public Video(String titulo, int minutos, String qualidade, Formato codec){
+    public Video(String titulo, double minutos, String codec){
         this.titulo = titulo;
         this.minutos = minutos;
-        this.qualidade = qualidade;
-        this.codec = codec;
+        executa(codec);
+        descricaoVideo();
     }
     
-    public void executa(){
-        this.codec.getCodec();
+    public final void executa(String codec){
+        if (null != codec)switch (codec) {
+            case "AVI":
+                this.formato = new FormatoAVI(codec);
+                break;
+            case "MP3":
+                this.formato = new FormatoMP3(codec);
+                break;
+            default:
+                this.formato = new FormatoMP4(codec);
+                break;
+        }
     }
     
     
+    public final void descricaoVideo(){
+        System.out.println("Vídeo: " + this.titulo 
+             + ", " + this.minutos + " minutos,"
+             + " formato: " + this.formato.getCodec()); 
+    }
 }
